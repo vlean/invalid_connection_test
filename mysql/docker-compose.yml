@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  my57:
+    image: "mysql:5.7"
+    container_name: my57
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./my.ini:/etc/mysql/mysql.conf.d/mysqld.cnf
+      - ./logs:/data/logs
+    environment:
+      MYSQL_ROOT_PASSWORD: root
